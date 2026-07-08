@@ -1,0 +1,120 @@
+# ============================================================
+# PEOPLE — everyone in the group
+# ------------------------------------------------------------
+# HOW TO ADD A PERSON
+#   1. Copy an existing entry (from "- id:" to the blank line).
+#   2. Give it a unique lowercase "id" like "jane-doe".
+#   3. Set "group" to one of the group ids below.
+#   4. Add a headshot to public/images/people/ and reference it,
+#      or omit "headshot" to show an elegant placeholder.
+#   5. Run: npm run validate:content
+#
+# NOTE: entries marked "PLACEHOLDER" are examples — replace them
+# with real group members.
+# ============================================================
+
+groups:
+  - id: faculty
+    title: Faculty
+  - id: postdocs
+    title: Postdoctoral Researchers
+  - id: students
+    title: Graduate Students
+  - id: alumni
+    title: Alumni
+
+people:
+  - id: felipe-guzman
+    name: Felipe Guzmán
+    role: Professor & Principal Investigator
+    group: faculty
+    affiliation: Jack Lee Jewell Endowed Chair, Wyant College of Optical Sciences
+    bio: >-
+      Felipe Guzmán leads LASSO, developing optomechanical inertial sensors
+      and precision laser interferometry for gravitational-wave astronomy,
+      space geodesy, and inertial navigation. His background in
+      high-precision metrology for space includes work on LISA Pathfinder
+      and the LISA mission, and he is a member of the LISA Consortium and
+      the LIGO Scientific Collaboration.
+    email: felipe@arizona.edu # EDIT: verify address
+    links:
+      - label: University profile
+        url: https://optics.arizona.edu/person/felipe-guzman
+      - label: Google Scholar
+        url: https://scholar.google.com/citations?user=UYZb6TAAAAAJ
+    order: 1
+
+  - id: jose-sanjuan
+    name: Jose Sanjuan
+    role: Career-Track Professor
+    group: faculty
+    affiliation: Wyant College of Optical Sciences
+    bio: >-
+      Jose Sanjuan works on precision laser interferometry and optical
+      instrumentation for space missions, with experience from LISA
+      Pathfinder and LISA. His current research includes optical clock
+      and frequency-distribution technologies for future navigation and
+      Earth-observation missions.
+    email: jsanjuan@arizona.edu # EDIT: verify address
+    links:
+      - label: Google Scholar
+        url: https://scholar.google.com/ # EDIT: placeholder URL
+    order: 2
+
+  - id: miguel-dovale
+    name: Miguel Dovale
+    role: Career-Track Professor
+    group: faculty
+    affiliation: Wyant College of Optical Sciences
+    bio: >-
+      Miguel Dovale develops high-precision interferometric readout systems
+      and optomechanical sensors. With a background in metrology for the
+      LISA mission, his work spans displacement sensing at the picometer
+      level, optical cavities, and inertial sensing for ground and space
+      applications.
+    email: mdovale@arizona.edu # EDIT: verify address
+    links:
+      - label: Google Scholar
+        url: https://scholar.google.com/ # EDIT: placeholder URL
+    order: 3
+
+  # ---------- PLACEHOLDER ENTRIES: replace with real members ----------
+
+  - id: alex-rivera
+    name: Alex Rivera
+    role: Postdoctoral Researcher
+    group: postdocs
+    affiliation: Wyant College of Optical Sciences
+    bio: >-
+      PLACEHOLDER — Alex works on compact heterodyne interferometry and
+      vacuum characterization of monolithic resonators.
+    links: []
+
+  - id: priya-natarajan
+    name: Priya Natarajan
+    role: PhD Student, Optical Sciences
+    group: students
+    bio: >-
+      PLACEHOLDER — Priya designs and fabricates fused-silica mechanical
+      resonators with high mechanical quality factors.
+    links: []
+
+  - id: daniel-okafor
+    name: Daniel Okafor
+    role: PhD Student, Physics
+    group: students
+    bio: >-
+      PLACEHOLDER — Daniel develops phase-readout electronics and signal
+      processing for optomechanical accelerometers.
+    links: []
+
+  - id: sofia-marin
+    name: Sofía Marín
+    role: MS Student, Optical Sciences
+    group: alumni
+    years: 2023–2025
+    currentPosition: Now at a national laboratory
+    bio: >-
+      PLACEHOLDER — Sofía characterized thermal noise in compact
+      interferometer assemblies.
+    links: []

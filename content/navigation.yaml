@@ -1,0 +1,54 @@
+# ============================================================
+# NAVIGATION — header and footer links
+# ------------------------------------------------------------
+# "href" must be one of the site's pages:
+#   /  /research  /publications  /people  /news  /media  /join  /contact
+# or a full external URL. Validation will catch typos.
+# ============================================================
+
+main:
+  - label: Research
+    href: /research
+  - label: Publications
+    href: /publications
+  - label: People
+    href: /people
+  - label: News
+    href: /news
+  - label: Media
+    href: /media
+  - label: Contact
+    href: /contact
+
+# Highlighted button at the right edge of the header.
+cta:
+  label: Join Us
+  href: /join
+
+footer:
+  - title: Explore
+    items:
+      - label: Research
+        href: /research
+      - label: Publications
+        href: /publications
+      - label: People
+        href: /people
+      - label: Media
+        href: /media
+  - title: Group
+    items:
+      - label: News
+        href: /news
+      - label: Join Us
+        href: /join
+      - label: Contact
+        href: /contact
+  - title: University
+    items:
+      - label: University of Arizona
+        href: https://www.arizona.edu
+      - label: Wyant College of Optical Sciences
+        href: https://optics.arizona.edu
+      - label: Department of Physics
+        href: https://physics.arizona.edu

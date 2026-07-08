@@ -1,0 +1,123 @@
+# ============================================================
+# PAGE TEXT — headlines and intro copy for each page
+# ------------------------------------------------------------
+# Every heading and paragraph on the site's pages lives here, so
+# you can rewrite the site's voice without touching code.
+# Fields marked "rich text" support paragraphs (blank line
+# between them), **bold**, *italics*, and [links](https://...).
+# After editing, run: npm run validate:content
+# ============================================================
+
+home:
+  eyebrow: University of Arizona · Wyant College of Optical Sciences
+  # Use "\n" line breaks by writing the headline across lines with "|-".
+  headline: |-
+    Measuring the universe,
+    one picometer at a time.
+  intro: >-
+    We develop high-precision laser interferometry and optomechanical
+    sensing technologies for inertial navigation, Earth observation, and
+    gravitational-wave detection — on the ground and in space.
+  stats:
+    - value: "10⁻¹⁶ m/√Hz"
+      label: Displacement resolution
+    - value: "< 100 ng/√Hz"
+      label: Acceleration noise, 10 kHz band
+    - value: "mQ > 1000 kg"
+      label: Resonator figure of merit
+    - value: "2027"
+      label: ODIN flight on GRATTIS
+  researchIntro:
+    title: Precision instruments for ground and space
+    text: >-
+      From monolithic fused-silica resonators to spaceborne laser
+      interferometers, our work spans the full arc of instrument science —
+      design, fabrication, characterization, and flight.
+  callout:
+    title: Build the next generation of precision instruments with us.
+    text: >-
+      We are always looking for curious students and researchers in optics,
+      physics, and aerospace engineering — from undergraduate projects to
+      postdoctoral positions.
+    button:
+      label: Join the group
+      url: /join
+
+research:
+  title: Research
+  intro: >-
+    Our projects share one thread — measuring motion and distance at the
+    limits of precision — and span optomechanics, interferometry, and
+    space instrumentation.
+
+publications:
+  title: Publications
+  intro: >-
+    Peer-reviewed articles, conference proceedings, and preprints from the
+    group. For a complete record, see our Google Scholar profiles.
+
+people:
+  title: People
+  intro: >-
+    LASSO brings together researchers in optical sciences, physics, and
+    aerospace engineering at the University of Arizona.
+
+news:
+  title: News
+  intro: >-
+    Announcements, publications, awards, and milestones from the
+    laboratory.
+
+media:
+  title: Media
+  intro: >-
+    Photographs from the lab, renders of our instruments, and
+    visualizations of the physics behind them.
+
+join:
+  title: Join Us
+  intro: >-
+    We welcome applications from students and researchers who want to
+    build instruments that measure the world at the picometer scale.
+  body: |-
+    Work in the group spans **optical physics, precision mechanics,
+    electronics, and software** — most projects touch all four. Members
+    machine monolithic resonators, build interferometers, run vacuum
+    testbeds, write estimation algorithms, and prepare hardware for
+    flight.
+
+    We collaborate closely with the [LISA Consortium](https://www.lisamission.org),
+    the LIGO Scientific Collaboration, NASA centers, and partner
+    universities, and our alumni continue to national laboratories,
+    space agencies, and industry.
+  openings:
+    - title: PhD positions in optomechanical sensing
+      type: PhD position
+      description: >-
+        PLACEHOLDER — Openings for doctoral students in optical sciences,
+        physics, or aerospace engineering to work on resonator design and
+        interferometric readout. Edit or remove this entry in
+        content/pages.yaml.
+    - title: Undergraduate research projects
+      type: Undergraduate
+      description: >-
+        PLACEHOLDER — Semester and summer projects on lab automation,
+        optical testing, and data analysis are regularly available for
+        University of Arizona undergraduates.
+  howToApply: |-
+    Send an email to the group inbox with your **CV**, a short statement of
+    interest, and — for graduate applicants — transcripts and the names of
+    two references. Prospective PhD students should also apply through the
+    [Wyant College of Optical Sciences](https://optics.arizona.edu) or the
+    [Department of Physics](https://physics.arizona.edu) graduate programs
+    and mention the group in their application.
+
+contact:
+  title: Contact
+  intro: >-
+    Questions about our research, collaborations, or visiting the lab —
+    we'd love to hear from you.
+  visitNotes: >-
+    PLACEHOLDER — The laboratory is located at the Wyant College of
+    Optical Sciences on the University of Arizona campus in Tucson.
+    Visitor parking is available at the Cherry Avenue Garage.

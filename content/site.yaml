@@ -1,0 +1,55 @@
+# ============================================================
+# SITE IDENTITY & CONTACT — edit freely
+# ------------------------------------------------------------
+# Global information about the group: name, tagline, contact
+# details, and footer text. After editing, run:
+#     npm run validate:content
+# ============================================================
+
+name: Laboratory of Space Systems and Optomechanics
+shortName: LASSO
+tagline: Precision measurement for the next generation of space science.
+
+# Used for search engines and social-media previews (1–2 sentences).
+description: >-
+  LASSO at the University of Arizona develops high-precision laser
+  interferometry and optomechanical sensing technologies for inertial
+  sensing and navigation, Earth observation, and gravitational-wave
+  detection on ground and in space.
+
+# The production URL of the site (no trailing slash). Update after deployment.
+url: https://lasso.optics.arizona.edu
+
+university: University of Arizona
+department: Wyant College of Optical Sciences
+
+# Social preview image (shown when the site is shared on social media).
+ogImage: /generated/og-image.png
+
+contact:
+  email: lasso@arizona.edu # EDIT: replace with the group inbox
+  phone: "+1 (520) 555-0123" # EDIT: placeholder — replace or delete this line
+  addressLines:
+    - Wyant College of Optical Sciences
+    - The University of Arizona
+    - 1630 E. University Blvd.
+    - Tucson, AZ 85721, USA
+  mapUrl: https://maps.google.com/?q=Wyant+College+of+Optical+Sciences,+Tucson,+AZ
+
+# External profiles shown in the footer.
+social:
+  - label: Google Scholar
+    url: https://scholar.google.com/citations?user=UYZb6TAAAAAJ
+  - label: Wyant College profile
+    url: https://optics.arizona.edu/person/felipe-guzman
+  - label: GitHub
+    url: https://github.com/lasso-arizona # EDIT: placeholder URL
+
+footer:
+  blurb: >-
+    We design and build precision optical instruments — from compact
+    optomechanical accelerometers to spaceborne laser interferometers —
+    at the Wyant College of Optical Sciences.
+  acknowledgement: >-
+    Our research is supported by NASA, the National Science Foundation,
+    and the University of Arizona. # EDIT: keep the sponsor list current

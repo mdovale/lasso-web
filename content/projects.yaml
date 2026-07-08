@@ -1,0 +1,228 @@
+# ============================================================
+# RESEARCH PROJECTS
+# ------------------------------------------------------------
+# HOW TO ADD A PROJECT
+#   1. Copy an existing entry (from "- slug:" down to the blank line).
+#   2. Give it a unique lowercase "slug" — the page will appear at
+#      /research/<slug>.
+#   3. "people" must use ids from people.yaml; "publications" must
+#      use ids from publications.yaml; "media" ids from media.yaml.
+#   4. "image" is optional — add a file to public/images/projects/
+#      or point to a graphic in public/generated/.
+#   5. Set "featured: true" on the 3 projects to show on the homepage.
+#   6. Run: npm run validate:content
+#
+# "description" supports paragraphs (separate with a blank line),
+# **bold**, *italics*, and [links](https://example.com).
+# ============================================================
+
+projects:
+  - slug: optomechanical-inertial-sensors
+    title: Optomechanical Inertial Sensors
+    summary: >-
+      Compact, monolithic fused-silica resonators with laser-interferometric
+      readout, reaching nano-g acceleration sensitivities for gravimetry,
+      seismology, and inertial navigation.
+    description: |-
+      Mechanical resonators fabricated monolithically from fused silica are
+      the core sensing element of our accelerometers. Because the test mass,
+      flexures, and frame are carved from a single low-loss wafer, these
+      devices reach mechanical quality factors in the millions and
+      **mQ-products above 1000 kg** — the key figure of merit for thermal-
+      noise-limited acceleration sensing.
+
+      We pair these resonators with compact laser interferometers that read
+      out test-mass displacement at the level of 10⁻¹⁶ m/√Hz, translating to
+      acceleration noise floors below 100 ng/√Hz over a 10 kHz bandwidth,
+      and near 10⁻¹¹ m s⁻²/√Hz at low frequencies. The result is a family of
+      sensors that are small, portable, vacuum compatible, and free of the
+      electric-field noise that limits capacitive readouts.
+
+      Applications range from gravimetry, geodesy, and seismology to
+      inertial navigation on low-SWaP platforms and flight payloads. We
+      study new materials and fabrication methods, model and fabricate the
+      resonators, and characterize complete sensor systems in vacuum.
+    status: active
+    featured: true
+    order: 1
+    tags: [optomechanics, inertial sensing, geodesy]
+    image: /generated/resonator.svg
+    people:
+      - felipe-guzman
+      - jose-sanjuan
+      - alex-rivera
+      - priya-natarajan
+    publications:
+      - guzman-2019-monolithic
+      - hines-2020-inertial-sensors
+      - hines-2022-geodesy
+      - zhang-2023-cooling
+      - kelly-2021-estimation
+      - richardson-2020-quantum-hybrid
+      - wisniewski-2020-lasers
+    media:
+      - resonator-render
+      - interference-pattern
+    links:
+      - label: Wyant College of Optical Sciences
+        url: https://optics.arizona.edu
+
+  - slug: compact-heterodyne-interferometry
+    title: Compact Heterodyne Laser Interferometry
+    summary: >-
+      Periodic-error-free heterodyne interferometers with spatially separated
+      beams, achieving picometer displacement sensitivity in air and
+      sub-picometer performance in vacuum.
+    description: |-
+      Heterodyne laser interferometry is our workhorse for reading out
+      test-mass displacement. Our optical configuration adopts **spatially
+      separated two-frequency beams** to prevent frequency and polarization
+      mixing, eliminating the periodic errors that plague conventional
+      designs.
+
+      By maximizing common-mode beam paths, the interferometer strongly
+      rejects environmental disturbances such as temperature fluctuations
+      and acoustics. We have verified sensitivities of 3 pm in air, thermal
+      stability better than commercial systems by a factor of two, and
+      confirmed periodic-error-free performance during stationary and
+      dynamic measurements. Quasi-monolithic assemblies reach 0.6 pm/√Hz
+      above 1 Hz in vacuum.
+
+      Beyond our own sensors, this technology serves precise stage metrology
+      and machine control in industry, and space geodesy missions in
+      science. Current work focuses on single-block interferometers and
+      fiber-based variants to shrink the system further.
+    status: active
+    featured: true
+    order: 2
+    tags: [interferometry, metrology]
+    image: /generated/interference.svg
+    people:
+      - felipe-guzman
+      - miguel-dovale
+      - daniel-okafor
+    publications:
+      - joo-2020-heterodyne
+      - zhang-2021-noise
+      - zhang-2022-quasi-monolithic
+    media:
+      - interference-pattern
+    links: []
+
+  - slug: deep-frequency-modulation-interferometry
+    title: Deep Frequency Modulation Interferometry
+    summary: >-
+      Absolute ranging and displacement sensing with strongly
+      frequency-modulated lasers — from fundamental precision limits to
+      open-source simulation tools.
+    description: |-
+      Deep frequency modulation interferometry (DFMI) encodes displacement
+      and absolute distance in the harmonics of a strongly frequency-
+      modulated laser, enabling multi-fringe readout with a single photodiode
+      and a compact optical head.
+
+      We study the **fundamental limits of absolute ranging** with DFMI —
+      Fisher-information bounds, carrier-drift effects, and the systematic
+      "valleys of robustness" that govern practical accuracy — and develop
+      the estimation algorithms needed to reach those limits in real
+      instruments.
+
+      The group also maintains [DeepFMKit](https://doi.org/10.1016/j.cpc.2025.109934),
+      an open-source Python toolbox with a high-fidelity physics engine and
+      interchangeable parameter-estimation algorithms for prototyping DFMI
+      systems end to end.
+    status: active
+    order: 3
+    tags: [interferometry, ranging, software]
+    image: /generated/dfmi.svg
+    people:
+      - miguel-dovale
+    publications:
+      - dovale-2026-dfmi-limits
+      - dovale-2026-deepfmkit
+    media: []
+    links: []
+
+  - slug: odin-inertial-navigation
+    title: "ODIN: Distributed Inertial Sensing & Navigation"
+    summary: >-
+      A gyroscope-free optomechanical instrument — twelve fused-silica
+      accelerometers in a cubic configuration — recovering linear and
+      angular acceleration for space geodesy and navigation.
+    description: |-
+      ODIN, the *Optomechanical Distributed Instrument for inertial sensing
+      and Navigation*, is a NASA InVEST-funded instrument that recovers the
+      full six-degree-of-freedom motion of a spacecraft **without
+      gyroscopes**: twelve uniaxial fused-silica optomechanical
+      accelerometers arranged in a cubic configuration measure both linear
+      and angular acceleration.
+
+      The instrument builds directly on our monolithic resonator and compact
+      interferometer technologies, packaging them for the space environment.
+      ODIN is planned to fly on the **GRATTIS mission in 2027**, which will
+      demonstrate gravitational-reference-sensor technology for future Earth
+      geodesy missions on an ESPA-class microsatellite.
+
+      This project spans sensor fabrication, interferometric readout,
+      thermal and vibration qualification, and the estimation algorithms
+      that fuse twelve acceleration channels into navigation-grade motion
+      states.
+    status: active
+    featured: true
+    order: 4
+    tags: [space missions, inertial sensing, navigation]
+    image: /generated/odin.svg
+    people:
+      - jose-sanjuan
+      - miguel-dovale
+      - felipe-guzman
+      - daniel-okafor
+    publications:
+      - sanjuan-2026-odin
+      - conklin-2025-grattis
+    media:
+      - odin-cube-render
+    links:
+      - label: GRATTIS mission overview (PDF)
+        url: /publications/Conklin2025_GRATTIS.pdf
+
+  - slug: lisa-and-gravitational-wave-detection
+    title: LISA & Gravitational-Wave Detection
+    summary: >-
+      Precision optical metrology for gravitational-wave observatories on
+      ground and in space — including picometer structural monitoring of
+      the LISA telescope.
+    description: |-
+      Group members are part of the **LISA Consortium** and the **LIGO
+      Scientific Collaboration**, contributing precision-metrology expertise
+      from LISA Pathfinder to the characterization and development of
+      current and future gravitational-wave observatories.
+
+      For the LISA telescope, we developed an *optical truss
+      interferometer*: three compact Fabry-Pérot cavities distributed along
+      the telescope structure monitor its dimensional stability at the
+      picometer-per-root-hertz level in the millihertz band, ensuring the
+      optical pathlength stability that the mission's science requires.
+
+      On the ground, our optomechanical inertial sensors target the seismic
+      isolation systems of gravitational-wave detectors, where compact,
+      low-noise inertial references directly improve low-frequency
+      sensitivity.
+    status: active
+    order: 5
+    tags: [gravitational waves, space missions, interferometry]
+    image: /generated/lisa.svg
+    people:
+      - felipe-guzman
+      - jose-sanjuan
+      - miguel-dovale
+    publications:
+      - jersey-2021-spie
+      - jersey-2023-optical-truss
+    media:
+      - gw-simulation-video
+    links:
+      - label: LISA mission (ESA)
+        url: https://www.esa.int/Science_Exploration/Space_Science/LISA
+      - label: LIGO
+        url: https://www.ligo.caltech.edu

@@ -1,0 +1,78 @@
+# ============================================================
+# MEDIA & GALLERY
+# ------------------------------------------------------------
+# HOW TO ADD A MEDIA ITEM
+#   1. Put the file in public/media/ (photos, .mp4 clips) or
+#      public/generated/ (computer-generated graphics), then copy
+#      an entry below and point "src" at it. YouTube/Vimeo URLs
+#      are embedded automatically for type "video".
+#   2. "type" must be one of:
+#        image · video · animation · generated · lab-photo · render
+#   3. Always write meaningful "alt" text — it is read aloud by
+#      screen readers.
+#   4. "project" (optional) links the item to a project slug.
+#   5. Run: npm run validate:content
+#
+# NOTE: entries below are PLACEHOLDERS using generated graphics —
+# replace them with real lab photos and videos as they become
+# available.
+# ============================================================
+
+items:
+  - id: interference-pattern
+    title: Two-source interference field
+    type: generated
+    src: /generated/interference.svg
+    caption: >-
+      PLACEHOLDER — Computer-generated visualization of the interference
+      pattern produced by two coherent point sources, the physical
+      principle behind our heterodyne displacement readout.
+    alt: >-
+      Concentric rings from two point sources overlapping to form hyperbolic
+      interference fringes on a dark background.
+    credit: LASSO
+    project: compact-heterodyne-interferometry
+    featured: true
+
+  - id: resonator-render
+    title: Monolithic fused-silica resonator
+    type: render
+    src: /generated/resonator.svg
+    caption: >-
+      PLACEHOLDER — Stylized render of a monolithic optomechanical
+      resonator: test mass, flexures, and frame machined from a single
+      fused-silica wafer.
+    alt: >-
+      Line drawing of a rectangular fused-silica frame with an inner test
+      mass suspended by thin flexures.
+    credit: LASSO
+    project: optomechanical-inertial-sensors
+    featured: true
+
+  - id: odin-cube-render
+    title: ODIN cubic accelerometer configuration
+    type: generated
+    src: /generated/odin.svg
+    caption: >-
+      PLACEHOLDER — Twelve uniaxial accelerometers arranged on the edges of
+      a cube recover both linear and angular acceleration without
+      gyroscopes.
+    alt: >-
+      Wireframe cube with twelve highlighted sensing axes along its edges
+      on a dark background.
+    credit: LASSO
+    project: odin-inertial-navigation
+
+  - id: gw-simulation-video
+    title: Binary black-hole merger simulation
+    type: video
+    src: https://www.youtube.com/watch?v=QyDcTbR-kEA
+    caption: >-
+      PLACEHOLDER — Numerical-relativity simulation of the first detected
+      gravitational-wave event, GW150914. Replace with the group's own
+      videos (YouTube, Vimeo, or an .mp4 file in public/media/).
+    alt: >-
+      Simulation video of two black holes spiraling together and merging,
+      distorting the starfield behind them.
+    credit: SXS Collaboration
+    project: lisa-and-gravitational-wave-detection

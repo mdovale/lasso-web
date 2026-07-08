@@ -1,0 +1,247 @@
+# ============================================================
+# PUBLICATIONS
+# ------------------------------------------------------------
+# HOW TO ADD A PUBLICATION
+#   1. Copy an existing entry (from "- id:" down to the blank line).
+#   2. Give it a unique lowercase "id" like "lastname-2026-topic".
+#   3. Fill in title, authors (one per line), year, venue.
+#   4. Optional fields: volumePages, doi (just the DOI, no URL),
+#      arxiv (full URL), pdf (file in public/publications/ or URL),
+#      url (publisher page), tags, featured, citation.
+#   5. Set "featured: true" on at most 3–4 papers — they appear
+#      on the homepage.
+#   6. Run: npm run validate:content
+# ============================================================
+
+publications:
+  - id: dovale-2026-dfmi-limits
+    title: Fundamental limitations of absolute ranging via deep frequency modulation interferometry
+    authors:
+      - Miguel Dovale-Álvarez
+    year: 2026
+    venue: Physical Review Applied
+    volumePages: "25, 054046"
+    doi: 10.1103/ws8k-sd58
+    tags: [interferometry, ranging]
+    featured: true
+
+  - id: dovale-2026-deepfmkit
+    title: "The DeepFMKit python package: A toolbox for simulating and analyzing deep frequency modulation interferometers"
+    authors:
+      - M. Dovale-Álvarez
+    year: 2026
+    venue: Computer Physics Communications
+    volumePages: "319, 109934"
+    doi: 10.1016/j.cpc.2025.109934
+    tags: [interferometry, software]
+
+  - id: sanjuan-2026-odin
+    title: "ODIN: Optomechanical distributed instrument for inertial sensing and navigation"
+    authors:
+      - Jose Sanjuan
+      - Jackson Dahn
+      - Ramses Miranda-Espino
+      - Saruul Nasanjargal
+      - Andrea Nelson
+      - Jeremiah Stoddart
+      - Mohanad Warrayat
+      - Miguel Dovale
+      - Felipe Guzman
+    year: 2026
+    venue: Preprint
+    pdf: /publications/Sanjuan2026_ODIN.pdf
+    tags: [inertial sensing, space missions]
+    featured: true
+
+  - id: conklin-2025-grattis
+    title: "GRATTIS: The Gravitational Reference Advanced Technology Test in Space"
+    authors:
+      - John W. Conklin
+      - Stephen Apple
+      - Anthony Dávila Álvarez
+      - Stephen Bennett
+      - Riccardo Bevilacqua
+      - Lea Bischof
+      - Joseph Conroy
+      - Joseph Footdale
+      - Zane Forrester
+      - Paul Fulda
+      - John Hanson
+      - Harold Hollis
+      - Victoria Kennedy
+      - Ryan Kinzie
+      - Cole Perkins
+      - Jose Sanjuan
+      - Thomas Schwarze
+      - John Siu
+      - Robert Spero
+      - Mark Storm
+      - Brent Ware
+      - Peter Wass
+      - David Wiese
+    year: 2025
+    venue: Preprint
+    pdf: /publications/Conklin2025_GRATTIS.pdf
+    tags: [space missions, geodesy]
+    featured: true
+
+  - id: zhang-2023-cooling
+    title: Optomechanical Cooling and Inertial Sensing at Low Frequencies
+    authors:
+      - Yanqi Zhang
+      - Adam Hines
+      - Dalziel J. Wilson
+      - Felipe Guzman
+    year: 2023
+    venue: Physical Review Applied
+    volumePages: "19, 054004"
+    doi: 10.1103/PhysRevApplied.19.054004
+    tags: [optomechanics, inertial sensing]
+
+  - id: jersey-2023-optical-truss
+    title: Optical truss interferometer for the LISA telescope
+    authors:
+      - Kylan Jersey
+      - Ian Harley-Trochimczyk
+      - Yanqi Zhang
+      - Felipe Guzman
+    year: 2023
+    venue: Applied Optics
+    volumePages: "62 (21), 5675"
+    doi: 10.1364/AO.493108
+    tags: [interferometry, gravitational waves, space missions]
+
+  - id: zhang-2022-quasi-monolithic
+    title: Quasi-monolithic heterodyne laser interferometer for inertial sensing
+    authors:
+      - Yanqi Zhang
+      - Felipe Guzman
+    year: 2022
+    venue: arXiv preprint
+    arxiv: https://arxiv.org/abs/2209.04446
+    tags: [interferometry, inertial sensing]
+
+  - id: hines-2022-geodesy
+    title: Optomechanical Accelerometers for Geodesy
+    authors:
+      - Adam Hines
+      - Andrea Nelson
+      - Yanqi Zhang
+      - Guillermo Valdes
+      - Jose Sanjuan
+      - Jeremiah Stoddart
+      - Felipe Guzmán
+    year: 2022
+    venue: Remote Sensing
+    volumePages: "14, 4389"
+    doi: 10.3390/rs14174389
+    tags: [optomechanics, geodesy]
+    featured: true
+
+  - id: kelly-2021-estimation
+    title: Estimation and Error Analysis for Optomechanical Inertial Sensors
+    authors:
+      - Patrick Kelly
+      - Manoranjan Majji
+      - Felipe Guzmán
+    year: 2021
+    venue: Sensors
+    volumePages: "21, 6101"
+    doi: 10.3390/s21186101
+    tags: [inertial sensing, signal processing]
+
+  - id: zhang-2021-noise
+    title: Investigation and Mitigation of Noise Contributions in a Compact Heterodyne Interferometer
+    authors:
+      - Yanqi Zhang
+      - Adam S. Hines
+      - Guillermo Valdes
+      - Felipe Guzman
+    year: 2021
+    venue: Sensors
+    volumePages: "21, 5788"
+    doi: 10.3390/s21175788
+    tags: [interferometry, signal processing]
+
+  - id: jersey-2021-spie
+    title: Design, fabrication, and testing of an optical truss interferometer for the LISA telescope
+    authors:
+      - Kylan Jersey
+      - Yanqi Zhang
+      - Ian Harley-Trochimczyk
+      - Felipe Guzman
+    year: 2021
+    venue: Proc. SPIE, Astronomical Optics III
+    volumePages: "11820, 118200L"
+    doi: 10.1117/12.2594738
+    tags: [interferometry, gravitational waves, space missions]
+
+  - id: joo-2020-heterodyne
+    title: A compact high-precision periodic-error-free heterodyne interferometer
+    authors:
+      - Ki-Nam Joo
+      - Erin Clark
+      - Yanqi Zhang
+      - Jonathan D. Ellis
+      - Felipe Guzman
+    year: 2020
+    venue: Journal of the Optical Society of America A
+    volumePages: "37 (9), B11–B18"
+    doi: 10.1364/JOSAA.396298
+    arxiv: https://arxiv.org/abs/2004.13837
+    tags: [interferometry]
+
+  - id: hines-2020-inertial-sensors
+    title: Optomechanical inertial sensors
+    authors:
+      - Adam Hines
+      - Logan Richardson
+      - Hayden Wisniewski
+      - Felipe Guzman
+    year: 2020
+    venue: Applied Optics
+    volumePages: "59 (22), G167–G174"
+    doi: 10.1364/AO.393061
+    arxiv: https://arxiv.org/abs/2005.03456
+    tags: [optomechanics, inertial sensing]
+
+  - id: richardson-2020-quantum-hybrid
+    title: Quantum hybrid optomechanical inertial sensing
+    authors:
+      - Logan Richardson
+      - Adam Hines
+      - Andrew Schaffer
+      - Brian P. Anderson
+      - Felipe Guzman
+    year: 2020
+    venue: Applied Optics
+    volumePages: "59 (22), G160–G166"
+    doi: 10.1364/AO.393060
+    tags: [optomechanics, quantum sensing]
+
+  - id: wisniewski-2020-lasers
+    title: Optomechanical lasers for inertial sensing
+    authors:
+      - Hayden Wisniewski
+      - Logan Richardson
+      - Adam Hines
+      - Alexandre Laurain
+      - Felipe Guzmán
+    year: 2020
+    venue: Journal of the Optical Society of America A
+    volumePages: "37 (9), B87–B92"
+    doi: 10.1364/JOSAA.396774
+    arxiv: https://arxiv.org/abs/2006.01091
+    tags: [optomechanics, inertial sensing]
+
+  - id: guzman-2019-monolithic
+    title: Compact fully monolithic optomechanical accelerometer
+    authors:
+      - Felipe Guzmán
+      - Lee M. Kumanchik
+      - Ruven Spannagel
+      - Claus Braxmaier
+    year: 2019
+    venue: arXiv preprint
+    arxiv: https://arxiv.org/abs/1811.01049
+    tags: [optomechanics, inertial sensing]

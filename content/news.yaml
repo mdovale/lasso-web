@@ -1,0 +1,77 @@
+# ============================================================
+# NEWS & UPDATES
+# ------------------------------------------------------------
+# HOW TO ADD A NEWS POST
+#   1. Copy an existing entry and put it at the TOP of the list
+#      (order in this file doesn't matter — posts are sorted by
+#      date automatically — but keeping newest first is tidy).
+#   2. Give it a unique lowercase "slug"; the post will appear at
+#      /news/<slug>.
+#   3. "date" must be YYYY-MM-DD.
+#   4. "people" / "projects" / "media" reference ids from the
+#      other content files (optional).
+#   5. Run: npm run validate:content
+#
+# NOTE: the posts below are PLACEHOLDERS — replace them with real
+# group news. "body" supports paragraphs, **bold**, and [links](url).
+# ============================================================
+
+items:
+  - slug: odin-grattis-2027
+    title: ODIN selected to fly on the GRATTIS mission
+    date: 2026-05-12
+    summary: >-
+      PLACEHOLDER — Our gyroscope-free optomechanical inertial instrument is
+      planned to fly on the GRATTIS ESPA-class microsatellite in 2027.
+    body: |-
+      PLACEHOLDER — Replace with the real announcement.
+
+      ODIN, our *Optomechanical Distributed Instrument for inertial sensing
+      and Navigation*, will demonstrate distributed acceleration sensing in
+      orbit aboard the **GRATTIS** technology-demonstration mission. Twelve
+      fused-silica accelerometers in a cubic configuration will recover the
+      spacecraft's full linear and angular motion without gyroscopes.
+
+      The flight builds on years of work on monolithic resonators and
+      compact heterodyne interferometry in our laboratory at the Wyant
+      College of Optical Sciences.
+    projects:
+      - odin-inertial-navigation
+    people:
+      - jose-sanjuan
+      - felipe-guzman
+
+  - slug: dfmi-ranging-paper
+    title: New paper on the fundamental limits of DFMI ranging
+    date: 2026-04-02
+    summary: >-
+      PLACEHOLDER — Physical Review Applied publishes our framework for the
+      precision and accuracy limits of absolute ranging via deep frequency
+      modulation interferometry.
+    body: |-
+      PLACEHOLDER — Replace with the real announcement.
+
+      The paper establishes Fisher-information bounds for deep frequency
+      modulation interferometry, quantifies the effect of carrier drift,
+      and maps the systematic-error "valleys of robustness" that practical
+      instruments can exploit.
+    projects:
+      - deep-frequency-modulation-interferometry
+    people:
+      - miguel-dovale
+
+  - slug: welcome-new-students
+    title: LASSO welcomes new graduate students
+    date: 2026-01-20
+    summary: >-
+      PLACEHOLDER — Two new PhD students join the group to work on resonator
+      fabrication and interferometric readout.
+    body: |-
+      PLACEHOLDER — Replace with a real welcome post, and add the new
+      members to content/people.yaml at the same time.
+
+      We are delighted to welcome our newest group members, who will work
+      on fused-silica resonator fabrication and phase-readout electronics.
+    people:
+      - priya-natarajan
+      - daniel-okafor
