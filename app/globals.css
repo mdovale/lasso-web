@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/*
+ * LASSO design tokens.
+ *
+ * The palette is derived from the University of Arizona brand system
+ * (Arizona Blue #0C234B, Midnight #001C48, Arizona Red #AB0520, Bloom
+ * #EF4056, Sky #81D3EB, Oasis #378DBD) adapted for a dark, precision-
+ * instrument aesthetic. Change colors here — never inline in components.
+ */
+@theme {
+  /* Surfaces */
+  --color-ink: #05070f; /* page background: near-black with a blue cast */
+  --color-ink-raised: #0a0f1e; /* raised cards / panels */
+  --color-ink-overlay: #111830; /* hovered panels, subtle fills */
+  --color-line: #1d2742; /* hairline borders */
+  --color-line-bright: #2e3d63; /* hovered borders */
+
+  /* Text */
+  --color-fg: #f2f1ec; /* warm off-white body text */
+  --color-fg-muted: #9aa3b8; /* secondary text */
+  --color-fg-faint: #5c6580; /* tertiary text, timestamps */
+
+  /* Accents */
+  --color-accent: #ef4056; /* UA "Bloom" red — links, CTAs */
+  --color-accent-soft: #ff6b7d; /* hover state on dark */
+  --color-sky: #81d3eb; /* UA "Sky" — data/graphic accent */
+  --color-oasis: #378dbd; /* UA "Oasis" — secondary graphic accent */
+  --color-azurite: #1e5288;
+
+  /* Typography */
+  --font-display: var(--font-fraunces), "Georgia", serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Base ---------- */
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/* Focus visibility for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--color-sky);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Utility classes used across components ---------- */
+
+/* Monospace "instrument label" used for eyebrows, tags, and metadata */
+.u-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Editorial display headline */
+.u-display {
+  font-family: var(--font-display);
+  font-weight: 550;
+  letter-spacing: -0.015em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+/* Long-form prose blocks rendered from content files */
+.u-prose p {
+  margin-bottom: 1.25em;
+  line-height: 1.75;
+  color: var(--color-fg-muted);
+}
+
+.u-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.u-prose strong {
+  color: var(--color-fg);
+  font-weight: 600;
+}
+
+.u-prose a {
+  color: var(--color-sky);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--color-sky) 40%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 150ms;
+}
+
+.u-prose a:hover {
+  text-decoration-color: var(--color-sky);
+}
+
+/* Fine grid backdrop evoking optical breadboards */
+.u-grid-bg {
+  background-image:
+    radial-gradient(circle, var(--color-line) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
