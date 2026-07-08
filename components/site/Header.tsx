@@ -34,9 +34,6 @@ export function Header({
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close the mobile menu on navigation.
-  useEffect(() => setOpen(false), [pathname]);
-
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
@@ -130,6 +127,7 @@ export function Header({
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={() => setOpen(false)}
                   className={cn(
                     "rounded-lg px-3 py-2.5 text-base",
                     isActive(item.href) ? "text-sky" : "text-fg-muted hover:text-fg",
@@ -141,6 +139,7 @@ export function Header({
               {cta ? (
                 <Link
                   href={cta.href}
+                  onClick={() => setOpen(false)}
                   className="mt-2 rounded-full bg-accent px-4 py-2.5 text-center text-base font-medium text-white"
                 >
                   {cta.label}

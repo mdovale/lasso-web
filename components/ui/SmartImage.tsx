@@ -37,6 +37,17 @@ export function SmartImage({
     );
   }
 
+  // SVG artwork (e.g. public/generated/*) is served as-is; the Next.js
+  // image optimizer only handles raster formats.
+  if (src.endsWith(".svg")) {
+    return (
+      <div className={cn("relative overflow-hidden bg-ink-raised", className)}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={src} alt={alt} className="absolute inset-0 h-full w-full object-cover" />
+      </div>
+    );
+  }
+
   return (
     <div className={cn("relative overflow-hidden bg-ink-raised", className)}>
       <Image src={src} alt={alt} fill sizes={sizes} className="object-cover" />

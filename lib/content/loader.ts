@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import yaml from "js-yaml";
+import { load as parseYaml } from "js-yaml";
 import type { z } from "zod";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
@@ -35,7 +35,7 @@ export function loadYaml<S extends z.ZodTypeAny>(file: string, schema: S): z.inf
 
   let raw: unknown;
   try {
-    raw = yaml.load(fs.readFileSync(filePath, "utf8"));
+    raw = parseYaml(fs.readFileSync(filePath, "utf8"));
   } catch (err) {
     throw new ContentError(
       file,
