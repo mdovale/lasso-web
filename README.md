@@ -108,20 +108,40 @@ broken content can never be deployed silently.
 
 ## Deployment
 
-The project deploys to [Vercel](https://vercel.com) with zero configuration:
-import the repository, keep the default build command (`npm run build`), and
-every push to `main` deploys automatically after CI passes.
+### GitHub Pages (default)
 
-It is not locked to Vercel — the output is a standard Next.js build, so any
-Node host works:
+Pushes to `main` deploy automatically via
+[`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) after
+CI passes. Enable **Settings → Pages → Build and deployment → GitHub Actions**
+on the repository the first time.
+
+Live site: **https://mdovale.github.io/lasso-web**
+
+The build sets `NEXT_PUBLIC_BASE_PATH=/lasso-web` so assets resolve under the
+project URL. To preview that layout locally:
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/lasso-web npm run preview
+```
+
+### Custom domain
+
+For a root domain (e.g. `lasso.optics.arizona.edu`), add it under **Settings →
+Pages → Custom domain**, build without `NEXT_PUBLIC_BASE_PATH`, and set `url:` in
+`content/site.yaml` to match.
+
+### Other hosts
+
+The build is a static export in `out/`. Serve it with any static host, or use
+[Vercel](https://vercel.com) (import the repo, build command `npm run build`).
 
 ```bash
 npm run build
-npm run start   # serves on port 3000 (set PORT to change)
+npm run start   # serves `out/` on port 3000
 ```
 
-After deploying, set the real production URL in `content/site.yaml` (`url:`)
-so the sitemap and social previews point at the right domain.
+Keep `url:` in `content/site.yaml` aligned with the public domain so the
+sitemap and social previews point at the right place.
 
 ## Files non-technical maintainers should not touch
 

@@ -40,7 +40,7 @@ npm run validate:content      # 3. check your edits
 npm run dev                   # 4. preview at http://localhost:3000 (optional)
 git add content/ public/      # 5. save your changes to git
 git commit -m "Add new group member Jane Doe"
-git push                      # 6. publish — the site deploys automatically
+git push                      # 6. publish — GitHub Pages deploys automatically
 ```
 
 If `validate:content` prints a ✗, read the message — it names the file and
