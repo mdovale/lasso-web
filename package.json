@@ -1,0 +1,41 @@
+{
+  "name": "lasso-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Website of LASSO — Laboratory of Space Systems and Optomechanics, University of Arizona",
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run validate:content && next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "validate:content": "tsx scripts/validate-content.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "preview": "npm run build && next start",
+    "clean": "rm -rf .next out node_modules/.cache",
+    "check": "npm run validate:content && npm run typecheck && npm run lint && next build"
+  },
+  "dependencies": {
+    "framer-motion": "^12.42.2",
+    "js-yaml": "^5.2.1",
+    "next": "^16.2.10",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.2",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.10",
+    "postcss": "^8.5.16",
+    "prettier": "^3.9.4",
+    "tailwindcss": "^4.3.2",
+    "tsx": "^4.23.0",
+    "typescript": "^6.0.3"
+  }
+}
