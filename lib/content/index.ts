@@ -26,7 +26,8 @@ export const getNavigation = () => loadYaml("navigation.yaml", navigationSchema)
 export const getPages = () => loadYaml("pages.yaml", pagesSchema);
 export const getPeopleData = () => loadYaml("people.yaml", peopleSchema);
 export const getProjectsData = () => loadYaml("projects.yaml", projectsSchema);
-export const getPublicationsData = () => loadYaml("publications.yaml", publicationsSchema);
+export const getPublicationsData = () =>
+  loadYaml("publications.yaml", publicationsSchema);
 export const getNewsData = () => loadYaml("news.yaml", newsSchema);
 export const getMediaData = () => loadYaml("media.yaml", mediaSchema);
 
@@ -35,10 +36,7 @@ export const getMediaData = () => loadYaml("media.yaml", mediaSchema);
 const byOrder = <T extends { order?: number }>(items: T[]): T[] =>
   items
     .map((item, i) => ({ item, i }))
-    .sort(
-      (a, b) =>
-        (a.item.order ?? a.i) - (b.item.order ??  b.i) || a.i - b.i,
-    )
+    .sort((a, b) => (a.item.order ?? a.i) - (b.item.order ?? b.i) || a.i - b.i)
     .map(({ item }) => item);
 
 export function getProjects(): Project[] {

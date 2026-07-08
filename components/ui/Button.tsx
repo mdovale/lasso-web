@@ -4,8 +4,7 @@ import { cn } from "@/lib/utils";
 type Variant = "primary" | "outline" | "ghost";
 
 const styles: Record<Variant, string> = {
-  primary:
-    "bg-accent text-white hover:bg-accent-soft border border-transparent",
+  primary: "bg-accent text-white hover:bg-accent-soft border border-transparent",
   outline:
     "border border-line-bright text-fg hover:border-sky hover:text-sky bg-transparent",
   ghost: "text-fg-muted hover:text-fg bg-transparent border border-transparent",

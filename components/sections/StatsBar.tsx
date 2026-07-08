@@ -11,9 +11,7 @@ export function StatsBar({ stats }: { stats: { value: string; label: string }[] 
           {stats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.07}>
               <div className="px-2 py-9 text-center md:px-6">
-                <dd className="u-display text-3xl text-sky sm:text-4xl">
-                  {stat.value}
-                </dd>
+                <dd className="u-display text-3xl text-sky sm:text-4xl">{stat.value}</dd>
                 <dt className="u-label mt-3 text-fg-faint">{stat.label}</dt>
               </div>
             </Reveal>

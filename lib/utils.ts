@@ -22,9 +22,7 @@ export function formatAuthors(authors: string[], max = 6): string {
 
 /** Detect YouTube / Vimeo URLs and produce an embeddable iframe URL. */
 export function getVideoEmbedUrl(src: string): string | null {
-  const youtube = src.match(
-    /(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{6,})/,
-  );
+  const youtube = src.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
   if (youtube) return `https://www.youtube-nocookie.com/embed/${youtube[1]}`;
   const vimeo = src.match(/vimeo\.com\/(\d+)/);
   if (vimeo) return `https://player.vimeo.com/video/${vimeo[1]}`;

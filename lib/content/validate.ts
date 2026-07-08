@@ -47,11 +47,31 @@ export function validateCrossReferences(): ValidationProblem[] {
     }
   };
 
-  checkUnique("people.yaml", "person id", people.people.map((p) => p.id));
-  checkUnique("projects.yaml", "project slug", projects.map((p) => p.slug));
-  checkUnique("publications.yaml", "publication id", publications.map((p) => p.id));
-  checkUnique("news.yaml", "news slug", news.map((n) => n.slug));
-  checkUnique("media.yaml", "media id", media.map((m) => m.id));
+  checkUnique(
+    "people.yaml",
+    "person id",
+    people.people.map((p) => p.id),
+  );
+  checkUnique(
+    "projects.yaml",
+    "project slug",
+    projects.map((p) => p.slug),
+  );
+  checkUnique(
+    "publications.yaml",
+    "publication id",
+    publications.map((p) => p.id),
+  );
+  checkUnique(
+    "news.yaml",
+    "news slug",
+    news.map((n) => n.slug),
+  );
+  checkUnique(
+    "media.yaml",
+    "media id",
+    media.map((m) => m.id),
+  );
 
   const checkAsset = (file: string, owner: string, asset?: string) => {
     if (!asset || !asset.startsWith("/")) return; // external URLs not checked

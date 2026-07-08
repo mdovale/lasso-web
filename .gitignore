@@ -7,6 +7,7 @@
 
 # Misc
 .DS_Store
+.venv/
 *.pem
 npm-debug.log*
 .env*.local

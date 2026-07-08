@@ -119,7 +119,6 @@ body {
 
 /* Fine grid backdrop evoking optical breadboards */
 .u-grid-bg {
-  background-image:
-    radial-gradient(circle, var(--color-line) 1px, transparent 1px);
+  background-image: radial-gradient(circle, var(--color-line) 1px, transparent 1px);
   background-size: 28px 28px;
 }
