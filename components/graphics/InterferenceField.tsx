@@ -23,9 +23,11 @@ const DOT_POSITIVE = [129, 211, 235]; // --color-sky
 const DOT_NEGATIVE = [55, 141, 189]; // --color-oasis
 const DOT_ACCENT = [239, 64, 86]; // --color-accent
 
-const GRID_SPACING = 16; // CSS px between dots
-const WAVELENGTH = 46; // fringe spacing in px
-const SPEED = 0.35; // phase advance, rad/s
+// The grid must sample the wavelength finely (several dots per fringe),
+// otherwise the pattern reads as noise instead of coherent wavefronts.
+const GRID_SPACING = 12; // CSS px between dots
+const WAVELENGTH = 150; // fringe spacing in px
+const SPEED = 0.45; // phase advance, rad/s
 
 interface Source {
   x: number; // relative position, 0..1
@@ -34,10 +36,12 @@ interface Source {
   amp: number;
 }
 
+// Two dominant sources create the classic hyperbolic fringe pattern; the
+// faint third source keeps it from looking too symmetric.
 const SOURCES: Source[] = [
-  { x: 0.22, y: 0.3, phase: 0, amp: 1 },
-  { x: 0.78, y: 0.24, phase: 2.1, amp: 1 },
-  { x: 0.55, y: 0.85, phase: 4.2, amp: 0.85 },
+  { x: 0.3, y: 0.32, phase: 0, amp: 1 },
+  { x: 0.74, y: 0.28, phase: 2.1, amp: 1 },
+  { x: 0.55, y: 0.95, phase: 4.2, amp: 0.35 },
 ];
 
 export function InterferenceField({ className }: { className?: string }) {
@@ -104,9 +108,9 @@ export function InterferenceField({ className }: { className?: string }) {
 
       const k = (2 * Math.PI) / WAVELENGTH;
       const phases = SOURCES.map((s, idx) => {
-        // Slight per-source frequency offsets keep the pattern evolving
-        // without ever repeating exactly.
-        const drift = t * SPEED * (1 + idx * 0.18);
+        // Different drift rates per source make the fringe pattern glide
+        // slowly without ever repeating exactly.
+        const drift = t * SPEED * (1 + idx * 0.35);
         const parallax = (idx - 1) * (pointer.x * 1.4 + pointer.y * 0.8);
         return s.phase + drift + parallax;
       });
@@ -118,21 +122,27 @@ export function InterferenceField({ className }: { className?: string }) {
         const x = dots[base];
         const y = dots[base + 1];
 
-        let field = 0;
+        // Time-averaged interference intensity |Σ aᵢ·e^{i(k·dᵢ−φᵢ)}|²:
+        // this is the stationary hyperbolic fringe pattern seen on a
+        // screen, rather than the instantaneous oscillating field.
+        let re = 0;
+        let im = 0;
         for (let s = 0; s < SOURCES.length; s++) {
-          field += SOURCES[s].amp * Math.cos(k * dots[base + 2 + s] - phases[s]);
+          const arg = k * dots[base + 2 + s] - phases[s];
+          re += SOURCES[s].amp * Math.cos(arg);
+          im += SOURCES[s].amp * Math.sin(arg);
         }
-        const norm = field / maxAmp; // -1 .. 1
+        const norm = (re * re + im * im) / (maxAmp * maxAmp); // 0 .. 1
 
         // Vertical fade so the pattern dissolves toward the content below.
-        const fade = 1 - Math.min(1, Math.max(0, (y / height - 0.55) / 0.45));
-        const intensity = norm * norm * fade;
-        if (intensity < 0.02) continue;
+        const fade = 1 - Math.min(1, Math.max(0, (y / height - 0.62) / 0.38));
+        const intensity = norm * fade;
+        if (intensity < 0.03) continue;
 
-        const positive = norm > 0;
-        const [cr, cg, cb] = positive ? DOT_POSITIVE : DOT_NEGATIVE;
-        const alpha = Math.min(0.85, intensity * 0.9);
-        const radius = 0.6 + intensity * 1.5;
+        // Bright fringes in sky, dimmer regions in oasis blue.
+        const [cr, cg, cb] = intensity > 0.45 ? DOT_POSITIVE : DOT_NEGATIVE;
+        const alpha = Math.min(0.9, intensity * 1.1);
+        const radius = 0.6 + intensity * 2.1;
 
         ctx.fillStyle = `rgba(${cr},${cg},${cb},${alpha})`;
         ctx.beginPath();

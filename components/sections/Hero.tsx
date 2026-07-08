@@ -37,7 +37,8 @@ export function Hero({
       {/* Generative backdrop + gradient wash for text legibility */}
       <div className="absolute inset-0" aria-hidden>
         <InterferenceField className="h-full w-full" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center_left,transparent_0%,rgba(5,7,15,0.55)_60%,var(--color-ink)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(5,7,15,0.72)_0%,rgba(5,7,15,0.35)_45%,transparent_75%)]" />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-ink/85 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-ink" />
       </div>
 
