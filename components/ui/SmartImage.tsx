@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { assetUrl, cn } from "@/lib/utils";
 
 /**
  * Image with graceful fallback: when `src` is missing, renders a subtle
@@ -44,7 +44,7 @@ export function SmartImage({
       <div className={cn("relative overflow-hidden bg-ink-raised", className)}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={src}
+          src={assetUrl(src)}
           alt={alt}
           className="absolute inset-0 h-full w-full object-cover"
         />

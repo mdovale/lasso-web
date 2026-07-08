@@ -1,5 +1,5 @@
 import type { Publication } from "@/lib/schemas";
-import { formatAuthors } from "@/lib/utils";
+import { assetUrl, formatAuthors } from "@/lib/utils";
 import { Tag } from "@/components/ui/Tag";
 
 function PubLink({ href, children }: { href: string; children: React.ReactNode }) {
@@ -31,7 +31,7 @@ export function PublicationCard({ publication }: { publication: Publication }) {
       <div className="mt-4 flex flex-wrap items-center gap-2">
         {pub.doi ? <PubLink href={`https://doi.org/${pub.doi}`}>DOI</PubLink> : null}
         {pub.arxiv ? <PubLink href={pub.arxiv}>arXiv</PubLink> : null}
-        {pub.pdf ? <PubLink href={pub.pdf}>PDF</PubLink> : null}
+        {pub.pdf ? <PubLink href={assetUrl(pub.pdf)}>PDF</PubLink> : null}
         {pub.url ? <PubLink href={pub.url}>Publisher</PubLink> : null}
         {pub.tags.map((tag) => (
           <Tag key={tag}>{tag}</Tag>

@@ -3,6 +3,27 @@ export function cn(...classes: Array<string | false | null | undefined>): string
   return classes.filter(Boolean).join(" ");
 }
 
+/**
+ * Prefix a root-relative public asset path with the deploy base path
+ * (NEXT_PUBLIC_BASE_PATH). External and special URLs are returned unchanged.
+ */
+export function assetUrl(path: string): string {
+  if (
+    !path ||
+    path.startsWith("http://") ||
+    path.startsWith("https://") ||
+    path.startsWith("//") ||
+    path.startsWith("data:") ||
+    path.startsWith("mailto:") ||
+    path.startsWith("#")
+  ) {
+    return path;
+  }
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  return `${basePath}${normalized}`;
+}
+
 /** "2026-03-14" → "March 14, 2026" (rendered in UTC to avoid TZ drift). */
 export function formatDate(isoDate: string): string {
   const date = new Date(`${isoDate}T00:00:00Z`);

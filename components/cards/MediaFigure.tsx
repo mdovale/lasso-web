@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import type { MediaItem } from "@/lib/schemas";
-import { getVideoEmbedUrl } from "@/lib/utils";
+import { assetUrl, getVideoEmbedUrl } from "@/lib/utils";
 import { Tag } from "@/components/ui/Tag";
 
 const typeLabel: Record<MediaItem["type"], string> = {
@@ -39,8 +39,8 @@ export function MediaFigure({ item }: { item: MediaItem }) {
         </div>
       ) : isLocalVideo ? (
         <video
-          src={item.src}
-          poster={item.thumbnail}
+          src={assetUrl(item.src)}
+          poster={item.thumbnail ? assetUrl(item.thumbnail) : undefined}
           controls
           playsInline
           preload="metadata"
@@ -48,7 +48,7 @@ export function MediaFigure({ item }: { item: MediaItem }) {
           aria-label={item.alt}
         />
       ) : (
-        <img src={item.src} alt={item.alt} loading="lazy" className="w-full" />
+        <img src={assetUrl(item.src)} alt={item.alt} loading="lazy" className="w-full" />
       )}
       <figcaption className="p-5">
         <div className="mb-3 flex items-center gap-2">

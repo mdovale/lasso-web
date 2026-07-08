@@ -8,6 +8,7 @@ import {
   getProjects,
   getPublicationById,
 } from "@/lib/content";
+import { assetUrl } from "@/lib/utils";
 import { MediaFigure } from "@/components/cards/MediaFigure";
 import { PublicationCard } from "@/components/cards/PublicationCard";
 import { Container } from "@/components/ui/Container";
@@ -140,7 +141,9 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
                     {project.links.map((link) => (
                       <li key={link.url}>
                         <a
-                          href={link.url}
+                          href={
+                            link.url.startsWith("http") ? link.url : assetUrl(link.url)
+                          }
                           {...(link.url.startsWith("http")
                             ? { target: "_blank", rel: "noopener noreferrer" }
                             : {})}
